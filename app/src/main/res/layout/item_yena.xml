@@ -12,7 +12,7 @@
         android:padding="@dimen/icon_padding"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
-        android:src="@drawable/sample_6"
+        android:src="@drawable/multi"
 
         />
     <LinearLayout

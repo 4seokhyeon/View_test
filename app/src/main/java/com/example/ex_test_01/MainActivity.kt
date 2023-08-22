@@ -19,14 +19,14 @@ class MainActivity : AppCompatActivity() {
 
         // 데이터 원본 준비
         val dataList = mutableListOf<MyItem>()
-        dataList.add(MyItem(R.drawable.sample_0, "Bella", "1"))
-        dataList.add(MyItem(R.drawable.sample_1, "Charlie", "2"))
-        dataList.add(MyItem(R.drawable.sample_2, "Daisy", "1.5"))
-        dataList.add(MyItem(R.drawable.sample_3, "Duke", "1"))
-        dataList.add(MyItem(R.drawable.sample_4, "Max", "2"))
-        dataList.add(MyItem(R.drawable.sample_5, "Happy", "4"))
-        dataList.add(MyItem(R.drawable.sample_6, "Luna", "3"))
-        dataList.add(MyItem(R.drawable.sample_7, "Bob", "2"))
+        dataList.add(MyItem(R.drawable.dark_header, "Bella", "1"))
+        dataList.add(MyItem(R.drawable.ic_delete, "Charlie", "2"))
+        dataList.add(MyItem(R.drawable.dark_header, "Daisy", "1.5"))
+        dataList.add(MyItem(R.drawable.dark_header, "Duke", "1"))
+        dataList.add(MyItem(R.drawable.alert_light_frame, "Max", "2"))
+        dataList.add(MyItem(R.drawable.dialog_holo_dark_frame, "Happy", "4"))
+        dataList.add(MyItem(R.drawable.arrow_down_float , "Luna", "3"))
+        dataList.add(MyItem(R.drawable.btn_default_small, "Bob", "2"))
 
 
         // 어댑터 생성 및 연결
