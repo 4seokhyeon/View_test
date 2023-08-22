@@ -4,27 +4,38 @@ import android.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.example.ex_test_01.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
-
-
+        setContentView(binding.root)
 
         // 데이터 원본 준비
-        val items = arrayOf<String?>("item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item5", "item6", "item7", "item8", "item5", "item6", "item7", "item8", "item5", "item6",  "item7", "item8")
+        val dataList = mutableListOf<MyItem>()
+        dataList.add(MyItem(R.drawable.sample_0, "Bella", "1"))
+        dataList.add(MyItem(R.drawable.sample_1, "Charlie", "2"))
+        dataList.add(MyItem(R.drawable.sample_2, "Daisy", "1.5"))
+        dataList.add(MyItem(R.drawable.sample_3, "Duke", "1"))
+        dataList.add(MyItem(R.drawable.sample_4, "Max", "2"))
+        dataList.add(MyItem(R.drawable.sample_5, "Happy", "4"))
+        dataList.add(MyItem(R.drawable.sample_6, "Luna", "3"))
+        dataList.add(MyItem(R.drawable.sample_7, "Bob", "2"))
 
-        //어댑터 준비 (배열 객체 이용, simple_list_item_1 리소스 사용
-        val adapter = ArrayAdapter(this, R.layout.simple_list_item_1, items)
 
-        binding.listView.adapter = adapter
+        // 어댑터 생성 및 연결
+        binding.listView.adapter = MyAdapter(this, dataList)
+
+        // 항목 클릭 이벤트 처리
+        binding.listView.setOnItemClickListener{ parent, view, position, id ->
+            val name: String = (binding.listView.adapter.getItem(position) as MyItem).aName
+            Toast.makeText(this," $name 선택!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
